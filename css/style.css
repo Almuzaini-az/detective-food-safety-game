@@ -1,0 +1,81 @@
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a, #0f172a);
+            color: #333;
+            min-height: 100vh;
+        }
+        .game-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        /* Animations */
+        .pop-in { animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .shake { animation: shake 0.5s; }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px) rotate(-5deg); }
+            75% { transform: translateX(5px) rotate(5deg); }
+        }
+        .float { animation: float 3s ease-in-out infinite; }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Custom Styles */
+        .kitchen-item {
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .kitchen-item:hover { transform: scale(1.05); }
+        .kitchen-item.found {
+            opacity: 0.5;
+            pointer-events: none;
+            filter: grayscale(100%);
+        }
+        
+        .newspaper-slot {
+            border: 2px dashed #cbd5e1;
+            transition: all 0.3s ease;
+        }
+        .newspaper-slot.filled {
+            border-style: solid;
+            border-color: #475569;
+            background: #f8fafc;
+        }
+        .newspaper-piece {
+            cursor: grab;
+            transition: all 0.2s;
+        }
+        .newspaper-piece:active { cursor: grabbing; transform: scale(0.95); }
+        .newspaper-piece.selected {
+            ring: 4px;
+            ring-color: #3b82f6;
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* تأثيرات الجريدة الصحفية */
+        .newspaper-page {
+            background-color: #f4f1ea;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+        }
+        .torn-paper {
+            background: #fff9c4;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+            position: relative;
+        }
+        .torn-paper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 4px;
+            background: linear-gradient(to right, transparent 50%, #e0e0e0 50%);
+            background-size: 10px 10px;
+        }
