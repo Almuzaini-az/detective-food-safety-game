@@ -389,24 +389,23 @@ const { useState, useEffect } = React;
 
                         </div>
                     </div>
-                        <footer className="w-full text-center mt-8 pt-6 pb-4 pop-in">
-                        <div className="max-w-md mx-auto bg-slate-800/90 border border-slate-700 p-5 rounded-2xl shadow-lg">
-                            <p className="text-slate-300 mb-3 text-sm md:text-base">
-                                لتصميم وبرمجة ألعاب وتطبيقات تفاعلية مشابهة، تواصل مع المطور:
-                            </p>
-                            <div className="flex flex-col items-center gap-3">
-                                <span className="font-bold text-white text-lg">Abdulaziz Almuzaini</span>
-                                <a href="https://wa.me/966561277572" target="_blank" rel="noopener noreferrer" 
-                                   className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-500 text-white px-6 py-2 rounded-full font-bold transition-transform hover:scale-105 shadow-md">
-                                    <i className="fa-brands fa-whatsapp text-xl"></i> تواصل عبر واتساب
-                                </a>
-                            </div>
-                        </div>
-                    </footer>
+                        <div className="fixed bottom-4 left-4 z-50">
+                        <a 
+                            href="https://wa.me/966561277572" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            title="لتصميم وبرمجة ألعاب تفاعلية مشابهة"
+                            className="flex items-center gap-2 text-slate-500/40 hover:text-green-400 transition-all duration-300 text-xs font-bold cursor-pointer"
+                        >
+                            <i className="fa-brands fa-whatsapp text-2xl"></i>
+                            <span className="hidden md:inline opacity-0 hover:opacity-100 transition-opacity duration-300">Abdulaziz Almuzaini</span>
+                        </a>
+                    </div>
                 </div>
             );
         }
 
         const root = ReactDOM.createRoot(document.getElementById('root'));
         root.render(<App />);
+
 
